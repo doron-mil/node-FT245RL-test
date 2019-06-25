@@ -2,6 +2,10 @@
   "name": "ftdi-test",
   "version": "0.0.1",
   "dependencies": {
-    "ftdi": "^1.2.1"
+    "FT245RL": "file:./FT245RL"
+  },
+  "scripts": {
+    "clean": "rm -rf ./FT245RL/build && rm -rf ./node_modules && npm i",
+    "start": "node index.js"
   }
 }
