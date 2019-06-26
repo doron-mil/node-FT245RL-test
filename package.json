@@ -8,5 +8,23 @@
     "clean": "rm -rf ./FT245RL/build && rm -rf ./node_modules",
     "clean_install": "npm run clean && npm i",
     "start": "node index.js"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/doron-mil/ftdi-test.git"
+  },
+  "keywords": [
+    "node",
+    "FT245R",
+    "FT245RL",
+    "ftdi",
+    "usb",
+    "driver",
+    "device"
+  ],
+  "homepage": "https://github.com/doron-mil/ftdi-test",
+  "bugs": {
+    "url": "https://github.com/doron-mil/ftdi-test/issues"
+  },
+  "license": "MIT"
 }
