@@ -3,11 +3,14 @@
 **This project is adding and using addON for controling FT245RL
 device.**
 
-**It relay on the ftdi package:  [ftdi](https://github.com/thomaschaaf/node-ftdi)**
+**It relies on the ftdi package:  [ftdi](https://github.com/thomaschaaf/node-ftdi)**
 
 # Installation
     
     npm npm clean_install
+
+# Running ( after connecting the device)
+
     npm start
 
 ### Modification:
