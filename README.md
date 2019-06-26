@@ -13,7 +13,7 @@ device.**
 
     npm start
 
-### Modification:
+# Modifications:
 
 * The index.js is to use the addOn
 * The FT245RL/index.js is the interface to communicate with the C++.
