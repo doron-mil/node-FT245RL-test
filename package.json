@@ -5,7 +5,8 @@
     "FT245RL": "file:./FT245RL"
   },
   "scripts": {
-    "clean": "rm -rf ./FT245RL/build && rm -rf ./node_modules && npm i",
+    "clean": "rm -rf ./FT245RL/build && rm -rf ./node_modules",
+    "clean_install": "npm run clean && npm i",
     "start": "node index.js"
   }
 }
