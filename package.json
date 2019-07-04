@@ -2,7 +2,7 @@
   "name": "ftdi-test",
   "version": "0.0.1",
   "dependencies": {
-    "FT245RL": "file:./FT245RL"
+    "FT245RL": "doron-mil/FT245RL"
   },
   "scripts": {
     "clean": "rm -rf ./FT245RL/build && rm -rf ./node_modules",
