@@ -29,18 +29,18 @@ ftdi.findFirst().then((device) => {
         let allOn = true;
         let interval = setInterval(function () {
             counter++;
-            if (data >= 15) {
+            if (data >= ((aPortsCount === 8) ? 255 : 15)) {
                 data = 0;
                 itCounter++;
             }
-            const mod = counter % 4;
+            const mod = counter % aPortsCount;
             const itMod = itCounter % 2;
             const a1 = 1 << mod;
             const a3 = a1 | data;
             a2 = (a3 !== data) ? a3 : a2;
-            data = (mod == 3) ? a2 : data;
+            data = (mod === aPortsCount-1) ? a2 : data;
             if (a2 != prev) {
-                const dataArray = Array.from(a2.toString(2).padStart(4, '0'))
+                const dataArray = Array.from(a2.toString(2).padStart(aPortsCount, '0'))
                     .map(x => Number.parseInt(x));
                 if (itMod === 0) {
                     dataArray.reverse();
@@ -50,7 +50,7 @@ ftdi.findFirst().then((device) => {
                 });
             } else {
                 ftdi.switchAllPorts(device, allOn, (err) => {
-                    console.log('*********** ', itMod);
+                    console.log('All******** ', itMod);
                     allOn = !allOn;
                 });
             }
