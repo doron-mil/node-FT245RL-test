@@ -1,14 +1,20 @@
 const ftdi = require('FT245RL');
 
-// ftdi.find(0x403, 0x6001, function (err, devices) {
-//     console.log('ddddd', devices.length, devices[0]);
-// });
+const funcMap = [];
 
-const vendorId = 0x403;
-const productId = 0x6001;
+funcMap[0] = () => ftdi.find(0x403, 0x6001, function (err, devices) {
+    console.log('ddddd', devices.length, devices[0]);
+});
 
+const card1_vendorId = 0x403;
+const card1_productId = 0x6001;
+const card1_serialNumber = 'DAE002N9';
 
-ftdi.findFirst().then((device) => {
+const card2_vendorId = 0x403;
+const card2_productId = 0x6001;
+const card2_serialNumber = 'A601AXC8';
+
+funcMap[1] = (aPortsCount) => ftdi.findFirst().then((device) => {
     device.on('error', function (err) {
         console.log('8888', err);
     });
@@ -56,10 +62,12 @@ ftdi.findFirst().then((device) => {
             }
             prev = a2;
 
-        }, 100);
+        }, 2000);
     });
 
 }).catch((err) => {
     console.error('ERRRrr', err);
 });
 
+funcMap[0]();
+// funcMap[1](8);
