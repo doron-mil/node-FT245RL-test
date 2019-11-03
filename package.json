@@ -2,11 +2,9 @@
   "name": "ftdi-test",
   "version": "0.0.1",
   "dependencies": {
-    "FT245RL": "doron-mil/FT245RL"
+    "ft245rl": "^1.3.2"
   },
   "scripts": {
-    "clean": "rm -rf ./FT245RL/build && rm -rf ./node_modules",
-    "clean_install": "npm run clean && npm i",
     "start": "node index.js"
   },
   "repository": {
